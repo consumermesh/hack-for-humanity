@@ -4,6 +4,10 @@ A reproducible pipeline for turning consultation audio into a structured
 clinical note, built around evaluation rather than a demo. It ships with the two
 Kaggle datasets that pair **encounter audio** with **clinical notes**.
 
+> **Research prototype — not a medical device.** Outputs can be wrong and must be
+> reviewed by a qualified clinician. Do not use this software for diagnosis or
+> treatment. See [DISCLAIMER.md](DISCLAIMER.md).
+
 ```
 audio ──► diarization ──► ASR ─────────────► gated Gemma repair ──► Gemma note
             (speechbrain/     (Whisper large-v3 /     (medical terms only,      (JSON +
@@ -209,3 +213,9 @@ locally after downloading the data.
 ```bash
 .venv/bin/python -m pytest -q
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE). The software is provided "as is", without warranty
+of any kind. Clinical use, data protection, and regulatory compliance are the
+user's responsibility; read [DISCLAIMER.md](DISCLAIMER.md) before deploying.
