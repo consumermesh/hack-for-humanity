@@ -1,0 +1,26 @@
+# Core
+numpy
+soundfile
+requests
+pydantic>=2
+tqdm
+
+# Data / metrics
+textgrid
+jiwer
+rouge-score
+pandas
+
+# ASR (CPU-friendly, no torch required)
+faster-whisper
+
+# Optional, for MedASR (gated on HF; needs torch + transformers)
+# torch
+# transformers>=5.0
+
+# Optional: speaker diarization (GPU recommended)
+# torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+# speechbrain scikit-learn
+
+# Optional: in-process GGUF inference without a server
+# llama-cpp-python

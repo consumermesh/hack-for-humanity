@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clinical-scribe"
+version = "0.1.0"
+description = "Transcribe clinical encounters and extract structured notes with Gemma"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "soundfile",
+  "requests",
+  "pydantic>=2",
+  "tqdm",
+  "textgrid",
+  "jiwer",
+  "rouge-score",
+]
+
+[project.optional-dependencies]
+asr = ["faster-whisper"]
+diarize = ["torch", "torchaudio", "speechbrain", "scikit-learn"]
+llm = ["llama-cpp-python"]
+dev = ["pytest"]
+
+[project.scripts]
+clinical-scribe = "clinical_scribe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
